@@ -7,7 +7,11 @@ from django.conf import settings
 from market.model.market import Market
 from market.model.transaction import Transaction
 
-# Create your models here.
+
+class PositionManager(models.Manager):
+    pass
+
+
 class Position(models.Model):
 
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='positions')
@@ -17,6 +21,8 @@ class Position(models.Model):
     transaction_sell = models.ForeignKey(Transaction, on_delete=models.CASCADE, related_name='positions_sell', blank=True, null=True)
 
     desired_return = models.FloatField()
+
+    objects = PositionManager()
 
     @property
     def closed(self):
