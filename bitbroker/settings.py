@@ -55,6 +55,11 @@ INSTALLED_APPS += [
     'market'
 ]
 
+if DEBUG:
+    INSTALLED_APPS += [
+        'django_extensions'
+    ]
+
 AUTH_USER_MODEL = 'auth_user.User'
 
 MIDDLEWARE = [
