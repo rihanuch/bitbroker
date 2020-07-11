@@ -10,6 +10,8 @@ class Transaction(models.Model):
         BUY = 'BUY', 'Buy'
         SELL = 'SELL', 'Sell'
 
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='transactions')
+
     market = models.ForeignKey(Market, on_delete=models.CASCADE)
     date = models.DateTimeField(auto_now=True)
 
