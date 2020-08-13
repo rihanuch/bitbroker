@@ -55,7 +55,11 @@ INSTALLED_APPS += [
     'auth_user',
     'market',
     'api',
+    'bot',
 ]
+
+# telegram bot token
+BOT_TOKEN = env('BOT_TOKEN')
 
 if DEBUG:
     INSTALLED_APPS += [
@@ -140,7 +144,7 @@ REST_FRAMEWORK = {
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Chile/Continental'
 
 USE_I18N = True
 
