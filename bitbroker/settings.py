@@ -61,11 +61,6 @@ INSTALLED_APPS += [
 # telegram bot token
 BOT_TOKEN = env('BOT_TOKEN')
 
-if DEBUG:
-    INSTALLED_APPS += [
-        'django_extensions'
-    ]
-
 AUTH_USER_MODEL = 'auth_user.User'
 
 MIDDLEWARE = [
