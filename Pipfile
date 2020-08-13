@@ -4,6 +4,8 @@ url = "https://pypi.org/simple"
 verify_ssl = true
 
 [dev-packages]
+flake8 = "*"
+autopep8 = "*"
 django-extensions = "*"
 
 [packages]
@@ -13,6 +15,7 @@ django-heroku = "*"
 dj-database-url = "*"
 python-dotenv = "*"
 django-cryptography = "*"
+python-telegram-bot = "*"
 
 [requires]
-python_version = "3.7"
+python_version = "3.8"
