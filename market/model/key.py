@@ -17,3 +17,6 @@ class Key(models.Model):
     api_secret = encrypt(models.CharField(max_length=500, blank=True, null=True))
 
     objects = KeyManager()
+
+    def __str__(self):
+        return f'{self.user} - {self.market}'
