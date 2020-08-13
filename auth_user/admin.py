@@ -9,6 +9,7 @@ class CustomUserAdmin(UserAdmin):
     fieldsets = (
         (None, {
             'fields': (
+                'telegram_user_id',
                 'first_name',
                 'last_name',
                 'email',
@@ -20,6 +21,7 @@ class CustomUserAdmin(UserAdmin):
     add_fieldsets = (
         (None, {
             'fields': (
+                'telegram_user_id',
                 'first_name',
                 'last_name',
                 'email',

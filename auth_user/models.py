@@ -59,6 +59,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     first_name = models.CharField(_('first name'), max_length=30, blank=True)
     last_name = models.CharField(_('last name'), max_length=150, blank=True)
     telegram_user = models.CharField(_('telegram user'), max_length=50, blank=True)
+    telegram_user_id = models.IntegerField(unique=True, primary_key=True)
 
     is_active = models.BooleanField(
         _('active'),
@@ -86,7 +87,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     objects = UserManager()
 
     USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS = ['first_name', 'last_name']
+    REQUIRED_FIELDS = ['telegram_user_id', 'first_name', 'last_name']
 
     def get_full_name(self):
         """
